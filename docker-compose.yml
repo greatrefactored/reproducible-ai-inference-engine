@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  inference-engine:
+    image: ollama/ollama:latest
+    container_name: local-ai-inference
+    ports: - "11434:11434"
+    volumes: - ollama_data:/root/.ollama
+    deploy:
+      resources:
+        limits:
+            memory:
+        reservations:
+          memory:
+volumes:
+  ollama_data:
